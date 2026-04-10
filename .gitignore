@@ -2,5 +2,13 @@ node_modules/
 .next/
 .env
 .env.local
+.env*.local
 *.tsbuildinfo
 next-env.d.ts
+*.log
+.DS_Store
+.vercel
+build/
+dist/
+coverage/
+.turbo

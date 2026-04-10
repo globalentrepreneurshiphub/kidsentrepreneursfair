@@ -1,0 +1,72 @@
+Vamos a conectar este workspace a un repositorio de GitHub nuevo. El objetivo es tener el código versionado y poder compartirlo para revisión.
+
+PASO 1 — VERIFICAR ESTADO DE GIT:
+- Ejecuta "git status" en el shell
+- Reporta si el workspace ya tiene un repositorio git inicializado o no
+- Si ya está inicializado, reporta si hay un remoto configurado (git remote -v)
+
+PASO 2 — REVISAR .gitignore:
+Confirma que el archivo .gitignore incluye al menos:
+- node_modules/
+- .next/
+- .env
+- .env.local
+- .env*.local
+- *.log
+- .DS_Store
+- .vercel
+- build/
+- dist/
+- coverage/
+- .turbo
+- package-lock.json NO debe estar ignorado (queremos que se suba)
+
+Si falta algo, agrégalo. Reporta el contenido final del .gitignore.
+
+PASO 3 — CONFIRMAR QUE NO HAY SECRETOS EN EL CÓDIGO:
+Antes de hacer commit, busca en todo el proyecto las siguientes cadenas y reporta si aparecen en algún archivo que NO sea .env.example o .env.local:
+- "SUPABASE_SERVICE_ROLE"
+- "sk_live"
+- "sk_test"
+- "re_" seguido de caracteres (keys reales de Resend)
+- Cualquier string que parezca una API key real
+
+Si encuentras algún secreto hardcodeado, repórtalo y NO hagas commit hasta que me avises.
+
+PASO 4 — CREAR EL REPOSITORIO EN GITHUB:
+Usa la integración de GitHub de Replit (el botón de Version Control en el panel lateral izquierdo, o el menú Tools → Git) para:
+1. Conectar este workspace a mi cuenta de GitHub
+2. Crear un repositorio NUEVO llamado: kidsentrepreneursfair-web
+3. Visibilidad: Private (para empezar)
+4. Descripción: "Official website for Kids Entrepreneurs Fair — multilingual Next.js 15 app backed by Global Entrepreneurship Hub UAE"
+5. Rama por defecto: main
+
+Si Replit no tiene la integración directa con GitHub disponible, dame las instrucciones exactas que debo seguir yo en la UI de Replit para conectarlo, y espera a que yo te confirme que ya está conectado antes de continuar.
+
+PASO 5 — PRIMER COMMIT Y PUSH:
+Una vez el repositorio esté creado y conectado:
+1. Agrega todos los archivos al staging: git add .
+2. Crea el primer commit con este mensaje:
+
+   "feat: initial commit - Kids Entrepreneurs Fair landing page
+
+   - Next.js 15 with App Router and next-intl
+   - 3-level structure: Global / Country (Colombia) / City (Bogota)
+   - Full bilingual content ES/EN (154 synced translation keys)
+   - Exhibitor and Visitor registration forms with React Hook Form + Zod
+   - API routes for registration and contact with graceful fallback
+   - Supabase and Resend integrations ready (pending real credentials)
+   - Baloo 2 + Quicksand typography, brand palette (Gold/Navy)
+   - Autoscale deployment configured"
+
+3. Haz push a main: git push -u origin main
+
+PASO 6 — REPORTE FINAL:
+Dame:
+- La URL completa del repositorio en GitHub (https://github.com/[usuario]/kidsentrepreneursfair-web)
+- La URL del primer commit
+- Confirmación de que el push fue exitoso
+- Cantidad de archivos subidos
+- Tamaño aproximado del repo
+
+Si en algún paso necesitas que yo haga algo en la UI (como autorizar la conexión a GitHub), dímelo claramente y espera mi confirmación antes de seguir.
