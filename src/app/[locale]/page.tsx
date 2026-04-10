@@ -435,7 +435,7 @@ export default async function GlobalPage({
                   🇨🇴 {t("countries.active.name")}
                 </p>
                 <p style={{ fontFamily: "var(--font-body)", fontSize: "0.85rem", color: "rgba(255,255,255,0.5)" }}>
-                  {t("countries.active.label")}
+                  {t("countries.active.badge")} · {t("countries.active.cities")}
                 </p>
               </div>
               <span style={{ color: "#D4A017", fontSize: "1.25rem" }}>→</span>

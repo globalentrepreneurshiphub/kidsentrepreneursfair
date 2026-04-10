@@ -66,4 +66,4 @@ The app has graceful fallback: without real credentials, forms log to console in
 - Workflow: "Start application" on port 5000
 
 ## Known Issues
-- Console warning: `global.countries.active.label` translation key referenced in page.tsx but the actual key is `global.countries.active.name`
+- None currently
