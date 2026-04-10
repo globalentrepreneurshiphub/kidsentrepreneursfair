@@ -1,0 +1,343 @@
+{
+  "common": {
+    "nav": {
+      "about": "What is the Fair?",
+      "zones": "Zones",
+      "call": "Open Call",
+      "faq": "FAQ",
+      "contact": "Contact",
+      "register": "Register"
+    },
+    "footer": {
+      "rights": "All rights reserved.",
+      "tagline": "Building the future, one entrepreneur at a time.",
+      "email": "globalentrepreneurshiphubuae@gmail.com",
+      "website": "www.kidsentrepreneursfair.com",
+      "instagram": "@kidsentrepreneursfair"
+    },
+    "langToggle": "Español",
+    "backed": "Backed by Global Entrepreneurship Hub UAE",
+    "tbc": "TBC",
+    "tbd": "TBD",
+    "comingSoon": "Coming soon",
+    "firstEdition": "First Edition",
+    "open": "Open",
+    "learnMore": "Learn more"
+  },
+  "global": {
+    "hero": {
+      "badge": "International Kids Entrepreneurship Fair",
+      "title": "Kids Entrepreneurs Fair",
+      "tagline": "\"The first fair where kids own the business.\"",
+      "tags": "Real Entrepreneurship  ·  Technology  ·  Robots  ·  Artificial Intelligence  ·  Drones",
+      "stats": ["3 days", "Premium Shopping Malls", "Free admission for visitors"],
+      "cta_primary": "Find the fair in your country",
+      "cta_secondary": "Learn more"
+    },
+    "about": {
+      "title": "What is Kids Entrepreneurs Fair?",
+      "description": "Kids Entrepreneurs Fair is a children's entrepreneurship fair that arrives at premium shopping malls around the world. A 3-day event where kids are the protagonists: they run their own business, present their brand on stage, and live a unique experience with robots, artificial intelligence, and drones.",
+      "description2": "This is not a recreational activity. It is a real commercial and educational space where every child receives a personalized credential with a QR code.",
+      "stats": [
+        { "value": "Multiple cities", "label": "Around the world" },
+        { "value": "3 days", "label": "Per fair" },
+        { "value": "Free", "label": "Admission for visitors" }
+      ]
+    },
+    "experiences": {
+      "title": "Two experiences, one fair",
+      "subtitle": "There are two ways to experience Kids Entrepreneurs Fair:",
+      "exhibitor": {
+        "title": "The Exhibitor Entrepreneur",
+        "credential": "Golden credential + personalized QR",
+        "description": "Does your child have a business? This is their stage. Kids Entrepreneurs Fair opens a call where the public chooses the best children's businesses per city through Instagram. Selected families participate completely free with their own booth, credentials, official certificate, and much more.",
+        "cta": "Learn about the open call and submit your child"
+      },
+      "visitor": {
+        "title": "The Future Entrepreneur",
+        "credential": "Personalized credential + QR · Free admission",
+        "description": "Does your child want to discover the world of entrepreneurship, technology, and innovation? Visit Kids Entrepreneurs Fair. Register your family and live a unique experience. Admission is free.",
+        "benefits": [
+          "Free access to all exhibitor booths",
+          "Access to the Interactive Experience Zone: robots, AI, and drones",
+          "Live shows and entertainment on stage",
+          "Personalized credential with their name and QR",
+          "Future Entrepreneur Certificate upon completing the experience"
+        ],
+        "cta": "Register your family as visitors"
+      }
+    },
+    "zones": {
+      "title": "4 zones, one complete experience",
+      "subtitle": "The fair is designed as a connected journey inside the shopping mall. From the moment you arrive, each zone leads you to the next.",
+      "items": [
+        {
+          "number": "1",
+          "icon": "📋",
+          "name": "Registration Point",
+          "location": "At the entrance — your first impression",
+          "description": "You arrive with your family, register in seconds, and your child receives their personalized credential with their name and QR code. From that moment, they are part of Kids Entrepreneurs Fair.",
+          "details": ["Quick family registration", "Data capture for the community", "Immediate delivery of credential with name + QR"]
+        },
+        {
+          "number": "2",
+          "icon": "🎤",
+          "name": "The Stage",
+          "location": "At the front, visible from the shopping mall corridors",
+          "description": "The stage is the heart of the event. It's the first thing you see and hear. It attracts the shopping mall audience and gives visibility to the young entrepreneurs.",
+          "details": ["Entrepreneur pitches: each exhibitor child goes on stage with their family to present their business (3-5 minutes)", "Shows and entertainment: dance, live robotics demos, and music between pitches", "Special moments: opening ceremony, certificate ceremony, group photo, and closing"]
+        },
+        {
+          "number": "3",
+          "icon": "🏪",
+          "name": "Young Entrepreneurs Booths",
+          "location": "In the center, forming aisles — the kids' marketplace",
+          "description": "Booths per city where kids with golden credentials run their own business. Each booth has a professional sign with the business name.",
+          "details": ["Categories: crafts, technology, toys, books, art, fashion, eco-friendly products", "Important: Food and beverages are not allowed per shopping mall policy"]
+        },
+        {
+          "number": "4",
+          "icon": "🤖",
+          "name": "Interactive Experience Zone",
+          "location": "At the back, semi-enclosed to feel special",
+          "description": "This is the wow zone. Here kids touch, create, and experiment with real technology. Three stations they will never forget:",
+          "details": ["Build Your Robot — The child builds and programs their own robot with educational robotics kits", "Talk to the AI — The child creates their business idea with artificial intelligence and takes home a printed mini business plan", "Fly the Future — Live demos of drones and humanoid robots. The future right before your eyes"]
+        }
+      ]
+    },
+    "call": {
+      "title": "Open call: does your child have a business? Submit it!",
+      "description": "Kids Entrepreneurs Fair is looking for the best children's businesses per city. How are they selected? The public decides. As a parent or guardian, register your child, record a video presenting their business, and post it on Instagram in collaboration with @kidsentrepreneursfair. The videos with the most likes, comments, and shares in each city win their spot at the fair. Participation is completely free.",
+      "benefits_title": "What does your family receive if selected?",
+      "benefits": [
+        "Own booth for the full 3 days of the fair (free of charge)",
+        "Professional sign with the business name",
+        "Golden credentials with QR for the child and their family",
+        "Product sales — 100% of sales go to the family",
+        "Pitch on the main stage in front of the audience",
+        "Official Exhibitor Entrepreneur Certificate from Global Entrepreneurship Hub UAE, delivered in a ceremony",
+        "Feature on the company's social media",
+        "Membership in the Kids Entrepreneurs Fair community for the whole family",
+        "Public recognition and first real sales"
+      ],
+      "cta": "Submit your child's business"
+    },
+    "certificates": {
+      "title": "Official certificates",
+      "subtitle": "Every child who participates in Kids Entrepreneurs Fair receives an official certificate backed by Global Entrepreneurship Hub UAE.",
+      "exhibitor": {
+        "title": "Exhibitor Entrepreneur Certificate",
+        "description": "Official recognition for children who participate with their business at the fair. Delivered on stage in a special ceremony."
+      },
+      "visitor": {
+        "title": "Future Entrepreneur Certificate",
+        "description": "Official recognition for children who visit the fair and complete the experience. Delivered at the end of the tour."
+      }
+    },
+    "sell": {
+      "title": "What can I sell at my booth?",
+      "categories": [
+        { "icon": "🎨", "label": "Crafts and handmade goods" },
+        { "icon": "💻", "label": "Technology: apps, prototypes, digital projects" },
+        { "icon": "🧸", "label": "Handmade toys and board games" },
+        { "icon": "📚", "label": "Books and publications (stories, comics)" },
+        { "icon": "🖼️", "label": "Art and design" },
+        { "icon": "👗", "label": "Fashion and accessories" },
+        { "icon": "🌱", "label": "Eco-friendly products" }
+      ],
+      "note": "IMPORTANT: Food and beverages are not allowed per shopping mall policy."
+    },
+    "howItWorks": {
+      "title": "How does it work?",
+      "exhibitor_title": "If you want to be an Exhibitor:",
+      "exhibitor_steps": [
+        { "n": "1", "title": "Register your child and their business", "desc": "As a parent or guardian, complete the form with your details, your child's details, and the business information." },
+        { "n": "2", "title": "Upload the video on Instagram", "desc": "Record a video (max 2 minutes) where your child presents their business and post it from your account in collaboration with @kidsentrepreneursfair." },
+        { "n": "3", "title": "Promote and share", "desc": "Ask your family, friends, and community to like, comment, and share. The metrics decide." },
+        { "n": "4", "title": "The best ones get in", "desc": "When the contest closes, the videos with the best metrics per city win their spot with booth, credentials, certificate, and everything included." }
+      ],
+      "visitor_title": "If you want to be a Visitor:",
+      "visitor_steps": [
+        { "n": "1", "title": "Register your family", "desc": "As a parent or guardian, complete the free pre-registration with your details and your child's details." },
+        { "n": "2", "title": "Arrive at the fair", "desc": "At the entrance your child receives their personalized credential with QR." },
+        { "n": "3", "title": "Explore and enjoy", "desc": "Visit the booths, watch the pitches on stage, and experience the Interactive Experience Zone." },
+        { "n": "4", "title": "Your child takes their certificate", "desc": "Upon completing the experience, they receive their Future Entrepreneur Certificate." }
+      ]
+    },
+    "faq": {
+      "title": "Frequently asked questions",
+      "items": [
+        { "q": "Does admission to the fair have a cost?", "a": "No. Admission for visitors is completely free." },
+        { "q": "Does it cost to participate as an exhibitor?", "a": "No. Selected families participate completely free." },
+        { "q": "How are the businesses selected?", "a": "Through an Instagram contest. Each family posts their child's video in collaboration with @kidsentrepreneursfair and the videos with the best metrics per city win their spot." },
+        { "q": "What should the video include?", "a": "Max 2 minutes. Your child presents their business: what it is, why they created it, and what they sell. It can be recorded with a phone, no professional editing needed." },
+        { "q": "How do I post the video in collaboration?", "a": "From your personal Instagram account, creating a post in collaboration with @kidsentrepreneursfair. Upon registration, you'll receive step-by-step instructions." },
+        { "q": "Does my child receive anything as a visitor?", "a": "Yes. A credential with QR upon registration and a Future Entrepreneur Certificate upon completing the experience." },
+        { "q": "What is the Interactive Experience Zone?", "a": "A space with three stations: build your robot with educational robotics kits, create your business idea with artificial intelligence, and watch drone and humanoid robot demos." },
+        { "q": "Can I sell food or drinks?", "a": "No. Per shopping mall policy." },
+        { "q": "I don't have a logo, is that a problem?", "a": "No. We design the sign with the business name in a professional format." },
+        { "q": "My child is under 5, can they participate?", "a": "Yes, with a responsible adult present at all times." },
+        { "q": "Do you charge commission on my sales?", "a": "No. 100% of sales go to your family." },
+        { "q": "Can I decorate my booth?", "a": "Yes, with your own materials. The top sign is provided by the organization." },
+        { "q": "My products are digital?", "a": "Yes. You can display your product on a screen or tablet." }
+      ]
+    },
+    "sponsors": {
+      "title": "Our sponsors",
+      "subtitle": "These brands make Kids Entrepreneurs Fair possible globally."
+    },
+    "countries": {
+      "title": "Find the fair in your country",
+      "subtitle": "Kids Entrepreneurs Fair is arriving in different countries. Select yours to see cities, dates, and how to participate.",
+      "active": {
+        "name": "Colombia",
+        "badge": "First Edition",
+        "cities": "Bogotá · Cali · Medellín · Barranquilla"
+      },
+      "coming_soon_title": "Coming soon in the following countries:",
+      "regions": [
+        {
+          "name": "South America",
+          "countries": ["Argentina — Buenos Aires", "Peru — Lima", "Chile — Santiago", "Ecuador — Quito", "Bolivia — Sucre", "Paraguay — Asunción", "Uruguay — Montevideo"]
+        },
+        {
+          "name": "Central America",
+          "countries": ["Guatemala — Guatemala City", "Costa Rica — San José", "Panama — Panama City", "Honduras — Tegucigalpa"]
+        },
+        {
+          "name": "North America",
+          "countries": ["Mexico — Mexico City"]
+        }
+      ]
+    },
+    "contact": {
+      "title": "Contact",
+      "name": "Full name",
+      "email": "Email address",
+      "message": "Message",
+      "send": "Send message",
+      "success": "Message sent! We'll be in touch soon.",
+      "error": "Failed to send. Please try again."
+    }
+  },
+  "country": {
+    "hero": {
+      "badge": "Colombia · First Edition",
+      "title": "Kids Entrepreneurs Fair",
+      "subtitle": "Colombia · First Edition",
+      "tagline": "\"The best children's businesses per city. The public decides.\"",
+      "cities_line": "Bogotá  ·  Cali  ·  Medellín  ·  Barranquilla",
+      "cta": "Choose your city"
+    },
+    "cities": {
+      "title": "Choose your city",
+      "items": [
+        { "name": "Bogotá", "slug": "bogota", "venue": "Premium shopping mall (TBC)", "dates": "Dates TBC" },
+        { "name": "Cali", "slug": "cali", "venue": "Premium shopping mall (TBC)", "dates": "Dates TBC" },
+        { "name": "Medellín", "slug": "medellin", "venue": "Premium shopping mall (TBC)", "dates": "Dates TBC" },
+        { "name": "Barranquilla", "slug": "barranquilla", "venue": "Premium shopping mall (TBC)", "dates": "Dates TBC" }
+      ]
+    },
+    "timeline": {
+      "title": "Contest timeline in Colombia",
+      "steps": [
+        { "label": "Applications open", "desc": "Families submit form and post video on Instagram" },
+        { "label": "Applications close", "desc": "Deadline to submit form and post video" },
+        { "label": "Contest active on Instagram", "desc": "Public votes with likes, comments, and shares" },
+        { "label": "Contest closes", "desc": "Metrics are finalized" },
+        { "label": "Selected exhibitors announced per city", "desc": "Winners are published" }
+      ]
+    },
+    "sponsors": {
+      "title": "Our sponsors in Colombia",
+      "subtitle": "These brands support Kids Entrepreneurs Fair in Colombia."
+    },
+    "contact": {
+      "title": "Contact",
+      "email": "globalentrepreneurshiphubuae@gmail.com",
+      "instagram": "@kidsentrepreneursfair",
+      "website": "www.kidsentrepreneursfair.com"
+    }
+  },
+  "city": {
+    "hero": {
+      "badge": "Bogotá · First Edition",
+      "title": "Kids Entrepreneurs Fair — Bogotá",
+      "venue": "Shopping mall (TBC)",
+      "dates": "Dates TBC",
+      "status": "Contest status: Open",
+      "cta_exhibitor": "Submit your child's business",
+      "cta_visitor": "Register your family as visitors"
+    },
+    "info": {
+      "title": "Dates and venue",
+      "venue_label": "Venue",
+      "venue_value": "Shopping mall (TBC)",
+      "dates_label": "Fair dates",
+      "dates_value": "Friday, Saturday, Sunday (TBC)",
+      "hours_label": "Hours",
+      "hours_value": "Shopping mall hours"
+    },
+    "timeline": {
+      "title": "Bogotá Timeline",
+      "steps": [
+        { "label": "Application deadline", "value": "TBD" },
+        { "label": "Instagram contest active", "value": "TBD" },
+        { "label": "Selected exhibitors announced", "value": "TBD" },
+        { "label": "Fair date", "value": "TBD" }
+      ]
+    },
+    "register": {
+      "title": "Register",
+      "tab_exhibitor": "Exhibitor Entrepreneur",
+      "tab_visitor": "Future Entrepreneur Visitor",
+      "exhibitor_title": "Submit your child and their business",
+      "exhibitor_subtitle": "As a parent or legal guardian, complete the form with your details, your child's details, and their business information.",
+      "visitor_title": "Register your family as visitors",
+      "visitor_subtitle": "Admission is free. Pre-register so that on the day of the fair, registration is instant and your child receives their credential upon arrival.",
+      "parent_section": "Parent or legal guardian details",
+      "child_section": "Child entrepreneur details",
+      "business_section": "Business details",
+      "auth_section": "Authorizations",
+      "parent_name": "Full name",
+      "parent_id": "ID number",
+      "parent_phone": "Phone / WhatsApp",
+      "parent_email": "Email",
+      "child_name": "Full name",
+      "child_age": "Age",
+      "business_name": "Business name",
+      "business_description": "Business description (what they sell, since when, why they created it)",
+      "business_category": "Product / service category",
+      "video_url": "Link to Instagram video (in collaboration with @kidsentrepreneursfair) — required",
+      "business_instagram": "Business Instagram (if available)",
+      "siblings": "Will they attend with siblings?",
+      "siblings_yes": "Yes",
+      "siblings_no": "No",
+      "siblings_details": "Add name and age of each sibling",
+      "auth_data": "I declare that I have read and accept the personal data processing policies.",
+      "auth_image": "I authorize the use of photographs, videos, logos, and other graphic material provided in this form, as well as photographs and videos captured before and during the event, for dissemination on the website, social media, and other digital channels of Global Entrepreneurship Hub, the Kids Entrepreneurs Fair, and its official sponsors, for promotional, educational, and outreach purposes, without financial compensation. This authorization includes the use of the image of the minor and the parent or guardian.",
+      "policy_link": "Full image usage policy",
+      "terms_link": "Event terms and conditions",
+      "submit_exhibitor": "Submit application",
+      "submit_visitor": "I want to attend for free",
+      "success": "Registration successful! We'll contact you soon.",
+      "error": "Registration failed. Please try again."
+    },
+    "cta": {
+      "title": "Your child is already an entrepreneur.",
+      "subtitle": "They just need the stage. Submit them and let the public decide.",
+      "note": "Limited spots in Bogotá. Instagram decides.",
+      "cta_exhibitor": "Submit your child's business",
+      "cta_visitor": "Register your family as visitors"
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "items": [
+        { "q": "Who can participate?", "a": "Children and youth aged 5 to 17 with business or entrepreneurship ideas." },
+        { "q": "What do I need to apply as an exhibitor?", "a": "Complete the registration form and submit a short video on Instagram in collaboration with @kidsentrepreneursfair presenting your business." },
+        { "q": "Is there an entry fee?", "a": "No. Visitor registration is free. Exhibitors also participate completely free if selected." },
+        { "q": "Do parents need to accompany children?", "a": "Yes, minors must be accompanied by a responsible adult during the event." }
+      ]
+    }
+  }
+}

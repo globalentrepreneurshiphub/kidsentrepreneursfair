@@ -1,0 +1,61 @@
+Acabo de importar un zip con el proyecto Kids Entrepreneurs Fair en este workspace nuevo. Antes de ejecutar cualquier cosa, necesito que hagas una verificación completa y me reportes el estado actual. NO modifiques nada, NO instales dependencias, NO ejecutes nada todavía — solo inspecciona y reporta.
+
+VERIFICACIÓN 1 — TIPO DE WORKSPACE:
+1. ¿Este workspace es un monorepo con estructura de artifacts (carpetas artifacts/, packages/, pnpm-workspace.yaml, api-server separado)?
+2. ¿O es un workspace simple con un solo proyecto Next.js en la raíz?
+3. Lista los archivos y carpetas que están en la raíz del workspace.
+
+VERIFICACIÓN 2 — STACK DEL PROYECTO IMPORTADO:
+1. Abre el archivo package.json de la raíz del proyecto Kids Fair y reporta:
+   - El nombre del proyecto
+   - La versión de Next.js instalada
+   - Si tiene next-intl
+   - Si tiene react-hook-form, zod, @hookform/resolvers
+   - Si tiene @supabase/supabase-js y resend
+   - Scripts definidos (dev, build, start)
+2. Confirma que es Next.js 15 con App Router (NO es React + Vite + Express).
+
+VERIFICACIÓN 3 — ESTRUCTURA DE ARCHIVOS:
+Confirma que existen los siguientes archivos/carpetas:
+- next.config.ts (o next.config.js)
+- tsconfig.json
+- postcss.config.mjs
+- .env.example
+- MIGRATION.md
+- app/ o src/app/ con subcarpetas:
+  - [locale]/ con layout.tsx y page.tsx
+  - [locale]/colombia/ con page.tsx
+  - [locale]/colombia/[city]/ o [locale]/colombia/bogota/
+  - api/register/exhibitor/route.ts
+  - api/register/visitor/route.ts
+  - api/contact/route.ts
+  - api/healthz/route.ts
+- components/
+- i18n/ o messages/ (archivos de traducción ES y EN)
+- public/
+- middleware.ts (necesario para next-intl)
+
+VERIFICACIÓN 4 — LIMPIEZA DE basePath:
+Busca en TODO el proyecto las siguientes cadenas y reporta dónde aparecen (si aparecen):
+- "basePath"
+- "kids-fair"
+- "BASE_PATH"
+- "NEXT_PUBLIC_BASE_PATH"
+
+Las únicas apariciones aceptables son en MIGRATION.md (como referencia histórica). Si aparecen en código fuente, repórtalas.
+
+VERIFICACIÓN 5 — CONTENIDO DE TRADUCCIONES:
+1. Abre los archivos de traducción ES y EN
+2. Confirma que ambos tienen las mismas claves (keys sincronizadas)
+3. Reporta cuántas claves tiene cada archivo
+
+VERIFICACIÓN 6 — LECTURA DEL MIGRATION.md:
+Lee el archivo MIGRATION.md que viene dentro del zip y dime si hay algún paso que ya esté hecho y algún paso que falte por hacer según lo que describe ese documento.
+
+REPORTE FINAL:
+Dame un resumen en este formato:
+✅ Lo que está correcto
+⚠️ Lo que necesita atención
+❌ Lo que falta o está mal
+
+NO instales dependencias, NO ejecutes npm run dev, NO toques el código todavía. Solo reporta. Después de tu reporte, te voy a dar las siguientes instrucciones.
