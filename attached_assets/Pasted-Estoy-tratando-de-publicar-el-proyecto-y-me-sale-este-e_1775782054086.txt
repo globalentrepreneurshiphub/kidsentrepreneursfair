@@ -1,0 +1,52 @@
+Estoy tratando de publicar el proyecto y me sale este error al llegar a "Run command":
+
+"bash -c printf "%s\n\n%s" "$0" "$1" Please use the Configuration pane to configure your run command."
+
+El problema es que el run command de producción (el que se ejecuta al publicar, no el de desarrollo) no está configurado. Next.js en producción necesita build y start separados, no dev.
+
+Por favor configura lo siguiente en el archivo .replit y en la configuración del deployment:
+
+1. BUILD COMMAND (para el deployment):
+   npm run build
+
+2. RUN COMMAND (para el deployment):
+   npm start
+
+   O si el puerto hay que pasarlo explícitamente:
+   npx next start -p $PORT
+
+3. VERIFICA el package.json y confirma que los scripts de Next.js están correctos:
+   "scripts": {
+     "dev": "next dev -p 5000",
+     "build": "next build",
+     "start": "next start",
+     ...
+   }
+
+   Si el script "start" no existe o está mal, agrégalo/corrígelo.
+
+4. CONFIGURACIÓN DEL DEPLOYMENT:
+   - Tipo: Autoscale (el que ya definimos antes)
+   - Build command: npm run build
+   - Run command: npm start
+   - Puerto: el que Next.js exponga por defecto (3000 en producción, o $PORT si Replit lo inyecta)
+
+5. VARIABLES DE ENTORNO EN EL DEPLOYMENT:
+   Confirma que las variables de .env.local también están configuradas como SECRETS del deployment (no solo del dev). Las que deben estar son:
+   - NEXT_PUBLIC_SUPABASE_URL
+   - NEXT_PUBLIC_SUPABASE_ANON_KEY
+   - SUPABASE_SERVICE_ROLE_KEY
+   - RESEND_API_KEY
+
+   De momento usa los mismos valores placeholder que en desarrollo. Las claves reales las agregaremos cuando conectemos Supabase y Resend.
+
+6. PRUEBA EL BUILD LOCAL ANTES DE PUBLICAR:
+   Antes de intentar publicar, ejecuta en el shell:
+   npm run build
+   
+   Reporta si el build se completa sin errores. Si aparecen errores de TypeScript o de compilación, repórtalos sin arreglarlos — pregúntame primero.
+
+7. DESPUÉS DE QUE EL BUILD LOCAL FUNCIONE:
+   Intenta publicar de nuevo. Si sale el error otra vez, mándame la captura o el texto exacto del error.
+
+Reporta cada paso conforme lo vayas haciendo.

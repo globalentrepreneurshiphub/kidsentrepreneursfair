@@ -65,5 +65,11 @@ The app has graceful fallback: without real credentials, forms log to console in
 - Dev server: `npx next dev --port 5000`
 - Workflow: "Start application" on port 5000
 
+## Deployment
+- Target: Autoscale
+- Build: `npm run build`
+- Run: `npm run start`
+- shadcn/ui components chart.tsx and resizable.tsx have @ts-nocheck due to type incompatibilities with latest package versions (neither is used in the app)
+
 ## Known Issues
 - None currently

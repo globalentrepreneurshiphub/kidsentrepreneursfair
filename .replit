@@ -32,3 +32,16 @@ outputType = "webview"
 [[ports]]
 localPort = 5000
 externalPort = 80
+
+[deployment]
+deploymentTarget = "autoscale"
+run = ["npm", "run", "start"]
+build = ["npm", "run", "build"]
+
+[userenv]
+
+[userenv.shared]
+NEXT_PUBLIC_SUPABASE_URL = "https://placeholder.supabase.co"
+NEXT_PUBLIC_SUPABASE_ANON_KEY = "placeholder_anon_key"
+SUPABASE_SERVICE_ROLE_KEY = "placeholder_service_key"
+RESEND_API_KEY = "re_placeholder"
