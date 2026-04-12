@@ -1,0 +1,78 @@
+Revisión de código de las API routes. Hay 6 correcciones necesarias antes de conectar Supabase. Aplica todas:
+
+CORRECCIÓN 1 — Campos faltantes en exhibitor (src/app/api/register/exhibitor/route.ts):
+Actualiza el exhibitorSchema de Zod para incluir todos los campos del formulario:
+
+const exhibitorSchema = z.object({
+  parent_name: z.string().min(2),
+  parent_id_number: z.string().min(5),
+  parent_email: z.string().email(),
+  parent_phone: z.string().min(7),
+  child_name: z.string().min(2),
+  child_age: z.number().min(4).max(17),
+  business_name: z.string().min(2),
+  business_description: z.string().min(10),
+  business_category: z.string().min(1),
+  business_instagram: z.string().optional(),
+  video_url: z.string().url(),
+  has_siblings: z.boolean().default(false),
+  siblings_info: z.string().optional(),
+  data_auth: z.boolean().refine(val => val === true, { message: "Data authorization is required" }),
+  image_auth: z.boolean().refine(val => val === true, { message: "Image authorization is required" }),
+  city: z.string(),
+  country: z.string(),
+  locale: z.string(),
+});
+
+Actualiza también el insert a Supabase para incluir los nuevos campos:
+parent_id_number, business_instagram, has_siblings, siblings_info, data_auth
+
+CORRECCIÓN 2 — Campo data_auth faltante en visitor (src/app/api/register/visitor/route.ts):
+Agrega data_auth al visitorSchema:
+
+  data_auth: z.boolean().refine(val => val === true, { message: "Data authorization is required" }),
+  image_auth: z.boolean().refine(val => val === true, { message: "Image authorization is required" }),
+
+Y cambia el rango de edad del visitor:
+  child_age: z.number().min(0).max(17),
+
+Agrega data_auth al insert de Supabase del visitor.
+
+CORRECCIÓN 3 — video_url requerido en exhibitor:
+Ya corregido arriba: z.string().url() (sin .optional())
+
+CORRECCIÓN 4 — Rango de edad:
+- Exhibitor: min(4).max(17)
+- Visitor: min(0).max(17)
+Ya corregido arriba en ambos schemas.
+
+CORRECCIÓN 5 — Try/catch para el envío de email en AMBAS routes:
+Envuelve el bloque de Resend en su propio try/catch para que un fallo de email no afecte la respuesta. Aplica en ambos archivos:
+
+if (process.env.RESEND_API_KEY) {
+  try {
+    const { Resend } = await import("resend");
+    const resend = new Resend(process.env.RESEND_API_KEY);
+    await resend.emails.send({ ... });
+  } catch (emailError) {
+    console.error("Email sending failed (registration was saved):", emailError);
+  }
+}
+
+CORRECCIÓN 6 — Emails bilingües:
+Usa el campo locale del request para enviar el email en el idioma correcto. En exhibitor:
+
+const isEnglish = data.locale === "en";
+subject: isEnglish
+  ? `We received your application! — ${data.business_name}`
+  : `¡Recibimos tu postulación! — ${data.business_name}`,
+html: isEnglish
+  ? `<h2>Hello ${data.parent_name}!</h2><p>We received the application for <strong>${data.child_name}</strong> with their business <strong>${data.business_name}</strong>.</p><p>We will review your application and contact you soon.</p><p>— The Kids Entrepreneurs Fair Team 🚀</p>`
+  : `<h2>¡Hola ${data.parent_name}!</h2><p>Recibimos la postulación de <strong>${data.child_name}</strong> con su emprendimiento <strong>${data.business_name}</strong>.</p><p>Revisaremos tu solicitud y te contactaremos pronto.</p><p>— El equipo de Kids Entrepreneurs Fair 🚀</p>`,
+
+Aplica la misma lógica bilingüe al email del visitor.
+
+DESPUÉS DE APLICAR TODAS LAS CORRECCIONES:
+1. Ejecuta npm run build para verificar que no hay errores
+2. Haz commit y push a GitHub con el mensaje: "fix: align API schemas with DB and form requirements, add bilingual emails, improve error handling"
+3. Reporta los cambios realizados
