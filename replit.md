@@ -49,13 +49,19 @@ src/
 - `/api/contact` - POST contact form
 - `/api/healthz` - GET health check
 
+## Database Tables (Supabase)
+- `kef_exhibitors` - Exhibitor registrations
+- `kef_visitors` - Visitor registrations
+- `kef_contacts` - Contact form submissions
+
 ## Environment Variables
-- `NEXT_PUBLIC_SUPABASE_URL` - Supabase project URL
-- `NEXT_PUBLIC_SUPABASE_ANON_KEY` - Supabase anonymous key
-- `SUPABASE_SERVICE_ROLE_KEY` - Supabase service role key
-- `RESEND_API_KEY` - Resend API key for emails
+- `NEXT_PUBLIC_SUPABASE_URL` - Supabase project URL (set in .env.local)
+- `NEXT_PUBLIC_SUPABASE_ANON_KEY` - Supabase anonymous key (set in .env.local)
+- `SUPABASE_SERVICE_ROLE_KEY` - Supabase service role key (Replit Secret)
+- `RESEND_API_KEY` - Resend API key for emails (pending real key)
 
 The app has graceful fallback: without real credentials, forms log to console instead of saving to DB/sending emails.
+API routes use bilingual emails (ES/EN based on locale parameter).
 
 ## Brand Colors
 - Gold: #D4A017, Gold Light: #F5C842
