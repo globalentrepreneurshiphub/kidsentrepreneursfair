@@ -41,9 +41,8 @@ build = ["npm", "run", "build"]
 [userenv]
 
 [userenv.shared]
-NEXT_PUBLIC_SUPABASE_URL = "https://placeholder.supabase.co"
-NEXT_PUBLIC_SUPABASE_ANON_KEY = "placeholder_anon_key"
-SUPABASE_SERVICE_ROLE_KEY = "placeholder_service_key"
+NEXT_PUBLIC_SUPABASE_URL = "https://rpodeatysekyzofzpuyk.supabase.co"
+NEXT_PUBLIC_SUPABASE_ANON_KEY = "sb_publishable_kCm-3Fd8Q8g659Vyr_uLyQ_c5kAPyS-"
 RESEND_API_KEY = "re_placeholder"
 
 [postMerge]

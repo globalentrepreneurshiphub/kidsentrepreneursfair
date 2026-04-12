@@ -5,7 +5,7 @@ const exhibitorSchema = z.object({
   parent_name: z.string().min(2),
   parent_email: z.string().email(),
   parent_phone: z.string().min(7),
-  parent_id_number: z.string().min(1),
+  parent_id_number: z.string().min(5),
   child_name: z.string().min(2),
   child_age: z.number().min(4).max(17),
   business_name: z.string().min(2),
@@ -13,7 +13,7 @@ const exhibitorSchema = z.object({
   business_category: z.string().min(1),
   business_instagram: z.string().optional(),
   video_url: z.string().url(),
-  has_siblings: z.boolean(),
+  has_siblings: z.boolean().default(false),
   siblings_info: z.string().optional(),
   image_auth: z.boolean().refine((val) => val === true, {
     message: "Image authorization is required",
@@ -40,7 +40,7 @@ export async function POST(req: NextRequest) {
     const { getSupabaseAdmin } = await import("@/lib/supabase");
     const supabase = getSupabaseAdmin();
 
-    const { error } = await supabase.from("exhibitors").insert({
+    const { error } = await supabase.from("kef_exhibitors").insert({
       parent_name: data.parent_name,
       parent_email: data.parent_email,
       parent_phone: data.parent_phone,
@@ -58,6 +58,7 @@ export async function POST(req: NextRequest) {
       data_auth: data.data_auth,
       city: data.city,
       country: data.country,
+      locale: data.locale,
       status: "pending",
     });
 

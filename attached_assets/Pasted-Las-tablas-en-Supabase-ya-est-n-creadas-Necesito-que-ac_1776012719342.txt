@@ -1,0 +1,80 @@
+Las tablas en Supabase ya están creadas. Necesito que actualices las API routes y la conexión. Aplica todo:
+
+IMPORTANTE: Las tablas se llaman kef_exhibitors, kef_visitors y kef_contacts (con prefijo kef_).
+
+CAMBIO 1 — Variables de entorno (.env.local):
+Reemplaza los valores placeholder con los reales:
+NEXT_PUBLIC_SUPABASE_URL=https://rpodeatysekyzofzpuyk.supabase.co
+NEXT_PUBLIC_SUPABASE_ANON_KEY=sb_publishable_kCm-3Fd8Q8g659Vyr_uLyQ_c5kAPyS-
+
+Verifica que SUPABASE_SERVICE_ROLE_KEY ya existe como Secret del entorno.
+
+CAMBIO 2 — Exhibitor route (src/app/api/register/exhibitor/route.ts):
+Reemplaza el schema completo:
+
+const exhibitorSchema = z.object({
+  parent_name: z.string().min(2),
+  parent_id_number: z.string().min(5),
+  parent_email: z.string().email(),
+  parent_phone: z.string().min(7),
+  child_name: z.string().min(2),
+  child_age: z.number().min(4).max(17),
+  business_name: z.string().min(2),
+  business_description: z.string().min(10),
+  business_category: z.string().min(1),
+  business_instagram: z.string().optional(),
+  video_url: z.string().url(),
+  has_siblings: z.boolean().default(false),
+  siblings_info: z.string().optional(),
+  data_auth: z.boolean().refine(val => val === true, { message: "Data authorization is required" }),
+  image_auth: z.boolean().refine(val => val === true, { message: "Image authorization is required" }),
+  city: z.string(),
+  country: z.string(),
+  locale: z.string(),
+});
+
+Cambia la tabla en el insert de "exhibitors" a "kef_exhibitors" e incluye TODOS los campos:
+parent_id_number, business_instagram, has_siblings, siblings_info, data_auth, locale
+
+Envuelve Resend en try/catch propio:
+if (process.env.RESEND_API_KEY) {
+  try {
+    const { Resend } = await import("resend");
+    const resend = new Resend(process.env.RESEND_API_KEY);
+    const isEnglish = data.locale === "en";
+    await resend.emails.send({
+      from: "Kids Entrepreneurs Fair <noreply@kidsentrepreneursfair.com>",
+      to: data.parent_email,
+      subject: isEnglish
+        ? `We received your application! — ${data.business_name}`
+        : `¡Recibimos tu postulación! — ${data.business_name}`,
+      html: isEnglish
+        ? `<h2>Hello ${data.parent_name}!</h2><p>We received the application for <strong>${data.child_name}</strong> with their business <strong>${data.business_name}</strong>.</p><p>We will review your application and contact you soon.</p><p>— The Kids Entrepreneurs Fair Team</p>`
+        : `<h2>¡Hola ${data.parent_name}!</h2><p>Recibimos la postulación de <strong>${data.child_name}</strong> con su emprendimiento <strong>${data.business_name}</strong>.</p><p>Revisaremos tu solicitud y te contactaremos pronto.</p><p>— El equipo de Kids Entrepreneurs Fair</p>`,
+    });
+  } catch (emailError) {
+    console.error("Email failed (registration saved):", emailError);
+  }
+}
+
+CAMBIO 3 — Visitor route (src/app/api/register/visitor/route.ts):
+- Agrega data_auth al schema con refine
+- image_auth con refine  
+- child_age: z.number().min(0).max(17)
+- Cambia tabla a "kef_visitors"
+- Agrega data_auth al insert
+- Envuelve Resend en try/catch
+- Haz email bilingüe igual que exhibitor
+
+CAMBIO 4 — Contact route (src/app/api/contact/route.ts):
+- Cambia tabla a "kef_contacts"
+- Agrega locale al schema y al insert
+
+CAMBIO 5 — Verifica src/lib/supabase.ts:
+Confirma que getSupabaseAdmin() usa SUPABASE_SERVICE_ROLE_KEY para el cliente servidor.
+
+DESPUÉS DE TODO:
+1. npm run build — sin errores
+2. Prueba en dev: abre /es/colombia/bogota, llena el formulario de visitante con datos ficticios y envía. Verifica en los logs del servidor que el insert se ejecuta sin errores.
+3. Commit y push: "fix: align API routes with kef_ tables, add missing fields, bilingual emails, error handling"
+4. Reporta resultado

@@ -32,7 +32,7 @@ export async function POST(req: NextRequest) {
     const { getSupabaseAdmin } = await import("@/lib/supabase");
     const supabase = getSupabaseAdmin();
 
-    const { error } = await supabase.from("visitors").insert({
+    const { error } = await supabase.from("kef_visitors").insert({
       parent_name: data.parent_name,
       parent_email: data.parent_email,
       parent_phone: data.parent_phone,

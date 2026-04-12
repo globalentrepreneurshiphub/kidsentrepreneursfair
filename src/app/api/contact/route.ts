@@ -5,6 +5,7 @@ const contactSchema = z.object({
   name: z.string().min(2),
   email: z.string().email(),
   message: z.string().min(10),
+  locale: z.string().optional().default("es"),
 });
 
 export async function POST(req: NextRequest) {
@@ -21,10 +22,11 @@ export async function POST(req: NextRequest) {
     const { getSupabaseAdmin } = await import("@/lib/supabase");
     const supabase = getSupabaseAdmin();
 
-    const { error } = await supabase.from("contacts").insert({
+    const { error } = await supabase.from("kef_contacts").insert({
       name: data.name,
       email: data.email,
       message: data.message,
+      locale: data.locale,
     });
 
     if (error) {
@@ -33,19 +35,23 @@ export async function POST(req: NextRequest) {
     }
 
     if (process.env.RESEND_API_KEY) {
-      const { Resend } = await import("resend");
-      const resend = new Resend(process.env.RESEND_API_KEY);
-      await resend.emails.send({
-        from: "Kids Entrepreneurs Fair <noreply@kidsentrepreneursfair.com>",
-        to: "hola@kidsentrepreneursfair.com",
-        subject: `Nuevo mensaje de contacto — ${data.name}`,
-        html: `
-          <h2>Nuevo mensaje de ${data.name}</h2>
-          <p><strong>Email:</strong> ${data.email}</p>
-          <p><strong>Mensaje:</strong></p>
-          <p>${data.message}</p>
-        `,
-      });
+      try {
+        const { Resend } = await import("resend");
+        const resend = new Resend(process.env.RESEND_API_KEY);
+        await resend.emails.send({
+          from: "Kids Entrepreneurs Fair <noreply@kidsentrepreneursfair.com>",
+          to: "hola@kidsentrepreneursfair.com",
+          subject: `Nuevo mensaje de contacto — ${data.name}`,
+          html: `
+            <h2>Nuevo mensaje de ${data.name}</h2>
+            <p><strong>Email:</strong> ${data.email}</p>
+            <p><strong>Mensaje:</strong></p>
+            <p>${data.message}</p>
+          `,
+        });
+      } catch (emailError) {
+        console.error("Email failed (contact saved):", emailError);
+      }
     }
 
     return NextResponse.json({ success: true });
