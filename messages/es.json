@@ -328,11 +328,11 @@
   },
   "city": {
     "hero": {
-      "badge": "Bogotá · Primera Edición",
-      "title": "Kids Entrepreneurs Fair — Bogotá",
+      "badge": "Primera Edición",
       "venue": "Centro comercial (Por confirmar)",
       "dates": "Fechas por confirmar",
-      "status": "Estado de la convocatoria: Abierta",
+      "status_open": "Convocatoria: Abierta",
+      "status_coming": "Próximamente",
       "cta_exhibitor": "Postula el negocio de tu hijo",
       "cta_visitor": "Registra a tu familia como visitantes"
     },
@@ -346,7 +346,7 @@
       "hours_value": "Horario del centro comercial"
     },
     "timeline": {
-      "title": "Cronograma Bogotá",
+      "title": "Cronograma",
       "steps": [
         { "label": "Fecha límite de inscripción", "value": "Por definir" },
         { "label": "Concurso activo en Instagram", "value": "Por definir" },

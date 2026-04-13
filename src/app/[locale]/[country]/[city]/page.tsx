@@ -4,7 +4,13 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import RegistrationTabs from "@/components/registration/RegistrationTabs";
 
-const SUPPORTED_CITIES = ["bogota"] as const;
+const CITIES = {
+  bogota: { name: "Bogotá", status: "open" as const },
+  cali: { name: "Cali", status: "coming" as const },
+  medellin: { name: "Medellín", status: "coming" as const },
+  barranquilla: { name: "Barranquilla", status: "coming" as const },
+};
+type CitySlug = keyof typeof CITIES;
 const SUPPORTED_COUNTRIES = ["colombia"] as const;
 
 export async function generateMetadata({
@@ -12,11 +18,12 @@ export async function generateMetadata({
 }: {
   params: Promise<{ locale: string; country: string; city: string }>;
 }): Promise<Metadata> {
-  const { locale } = await params;
+  const { locale, city } = await params;
+  const cityName = CITIES[city as CitySlug]?.name ?? city;
   const t = await getTranslations({ locale, namespace: "city.hero" });
   return {
-    title: `${t("title")} | kidsentrepreneursfair.com`,
-    description: t("status"),
+    title: `Kids Entrepreneurs Fair — ${cityName} | kidsentrepreneursfair.com`,
+    description: `${cityName} · ${t("badge")}`,
   };
 }
 
@@ -29,11 +36,12 @@ export default async function CityPage({
 
   if (
     !SUPPORTED_COUNTRIES.includes(country as "colombia") ||
-    !SUPPORTED_CITIES.includes(city as "bogota")
+    !(city in CITIES)
   ) {
     notFound();
   }
 
+  const cityData = CITIES[city as CitySlug];
   const t = await getTranslations({ locale, namespace: "city" });
   const tc = await getTranslations({ locale, namespace: "common" });
 
@@ -73,11 +81,11 @@ export default async function CityPage({
             <span>/</span>
             <span style={{ textTransform: "capitalize" }}>{city}</span>
           </nav>
-          <span className="badge" style={{ marginBottom: "1.5rem" }}>{t("hero.badge")}</span>
+          <span className="badge" style={{ marginBottom: "1.5rem" }}>{cityData.name} · {t("hero.badge")}</span>
           <h1 style={{ fontSize: "clamp(1.75rem, 5vw, 3.25rem)", lineHeight: 1.1, marginBottom: "1.25rem", color: "#FFFFFF" }}>
             Kids Entrepreneurs <span className="gradient-text">Fair</span>
             <span style={{ display: "block", fontSize: "0.65em", color: "rgba(255,255,255,0.6)", marginTop: "0.25rem" }}>
-              — Bogotá
+              — {cityData.name}
             </span>
           </h1>
           <div style={{ display: "flex", gap: "1.5rem", flexWrap: "wrap", marginBottom: "1.25rem" }}>
@@ -88,12 +96,30 @@ export default async function CityPage({
               📅 {t("hero.dates")}
             </span>
           </div>
-          <span style={{ display: "inline-block", backgroundColor: "rgba(34,197,94,0.1)", color: "#22c55e", padding: "0.3rem 0.9rem", borderRadius: "999px", fontSize: "0.8rem", fontFamily: "var(--font-body)", fontWeight: 600, marginBottom: "2rem" }}>
-            🟢 {t("hero.status")}
+          <span style={{
+            display: "inline-block",
+            backgroundColor: cityData.status === "open" ? "rgba(34,197,94,0.1)" : "rgba(212,160,23,0.15)",
+            color: cityData.status === "open" ? "#22c55e" : "#D4A017",
+            padding: "0.3rem 0.9rem",
+            borderRadius: "999px",
+            fontSize: "0.8rem",
+            fontFamily: "var(--font-body)",
+            fontWeight: 600,
+            marginBottom: "2rem"
+          }}>
+            {cityData.status === "open" ? "🟢" : "🟡"} {cityData.status === "open" ? t("hero.status_open") : t("hero.status_coming")}
           </span>
           <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
-            <a href="#register" className="btn-primary">{t("hero.cta_exhibitor")} →</a>
-            <a href="#register" className="btn-outline">{t("hero.cta_visitor")}</a>
+            {cityData.status === "open" ? (
+              <>
+                <a href="#register" className="btn-primary">{t("hero.cta_exhibitor")} →</a>
+                <a href="#register" className="btn-outline">{t("hero.cta_visitor")}</a>
+              </>
+            ) : (
+              <Link href={`/${locale}#countries`} className="btn-primary">
+                {locale === "es" ? "← Volver a países" : "← Back to countries"}
+              </Link>
+            )}
           </div>
         </div>
       </section>
@@ -129,13 +155,13 @@ export default async function CityPage({
         </div>
       </section>
 
-      {/* SECTION 3: BOGOTÁ TIMELINE */}
+      {/* SECTION 3: CITY TIMELINE */}
       <section className="section-padding" style={{ backgroundColor: "#0a1628" }}>
         <div className="section-container" style={{ maxWidth: "600px" }}>
           <div style={{ textAlign: "center", marginBottom: "2.5rem" }}>
             <span className="badge" style={{ marginBottom: "1rem" }}>{locale === "es" ? "Cronograma" : "Timeline"}</span>
             <h2 style={{ fontSize: "clamp(1.5rem, 3vw, 2rem)", color: "#FFFFFF" }}>
-              {t("timeline.title")}
+              {t("timeline.title")} — {cityData.name}
             </h2>
           </div>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "1rem" }}>
@@ -153,20 +179,43 @@ export default async function CityPage({
         </div>
       </section>
 
-      {/* SECTION 4 & 5: REGISTRATION FORMS */}
-      <section id="register" className="section-padding" style={{ backgroundColor: "#162544" }}>
-        <div className="section-container" style={{ maxWidth: "750px" }}>
-          <div style={{ textAlign: "center", marginBottom: "2.5rem" }}>
-            <span className="badge" style={{ marginBottom: "1rem" }}>
-              {locale === "es" ? "Inscripción" : "Registration"}
-            </span>
-            <h2 style={{ fontSize: "clamp(1.75rem, 4vw, 2.5rem)", color: "#FFFFFF" }}>
-              {t("register.title")}
-            </h2>
+      {/* SECTION 4 & 5: REGISTRATION FORMS (or coming soon) */}
+      {cityData.status === "open" ? (
+        <section id="register" className="section-padding" style={{ backgroundColor: "#162544" }}>
+          <div className="section-container" style={{ maxWidth: "750px" }}>
+            <div style={{ textAlign: "center", marginBottom: "2.5rem" }}>
+              <span className="badge" style={{ marginBottom: "1rem" }}>
+                {locale === "es" ? "Inscripción" : "Registration"}
+              </span>
+              <h2 style={{ fontSize: "clamp(1.75rem, 4vw, 2.5rem)", color: "#FFFFFF" }}>
+                {t("register.title")}
+              </h2>
+            </div>
+            <RegistrationTabs locale={locale} city={city} country={country} />
           </div>
-          <RegistrationTabs locale={locale} city={city} country={country} />
-        </div>
-      </section>
+        </section>
+      ) : (
+        <section id="register" className="section-padding" style={{ backgroundColor: "#162544" }}>
+          <div className="section-container" style={{ maxWidth: "600px", textAlign: "center" }}>
+            <span className="badge" style={{ marginBottom: "1rem" }}>
+              {locale === "es" ? "Próximamente" : "Coming Soon"}
+            </span>
+            <h2 style={{ fontSize: "clamp(1.75rem, 4vw, 2.5rem)", color: "#FFFFFF", marginBottom: "1rem" }}>
+              {locale === "es"
+                ? `Estamos preparando la feria en ${cityData.name}`
+                : `We're preparing the fair in ${cityData.name}`}
+            </h2>
+            <p style={{ fontFamily: "var(--font-body)", fontSize: "1rem", color: "rgba(255,255,255,0.65)", marginBottom: "2rem", lineHeight: 1.7 }}>
+              {locale === "es"
+                ? "Muy pronto anunciaremos fechas, lugar y convocatoria. Déjanos tu correo en la sección de países del home para avisarte primero."
+                : "We'll announce dates, venue, and open call soon. Drop your email in the countries section on the home page so we can notify you first."}
+            </p>
+            <Link href={`/${locale}#countries`} className="btn-primary">
+              {locale === "es" ? "Volver a países" : "Back to countries"}
+            </Link>
+          </div>
+        </section>
+      )}
 
       {/* FAQ */}
       <section id="faq" className="section-padding" style={{ backgroundColor: "#0a1628" }}>
@@ -193,30 +242,32 @@ export default async function CityPage({
         </div>
       </section>
 
-      {/* SECTION 6: FINAL CTA */}
-      <section className="section-padding" style={{ background: "linear-gradient(135deg, #0a1628 0%, #162544 100%)" }}>
-        <div className="section-container" style={{ textAlign: "center", maxWidth: "700px" }}>
-          <h2 style={{ fontSize: "clamp(1.75rem, 5vw, 3rem)", color: "#FFFFFF", marginBottom: "0.75rem" }}>
-            {t("cta.title")}
-          </h2>
-          <p style={{ fontFamily: "var(--font-body)", fontSize: "1.1rem", color: "rgba(255,255,255,0.65)", marginBottom: "0.5rem", lineHeight: 1.7 }}>
-            {t("cta.subtitle")}
-          </p>
-          <p style={{ fontFamily: "var(--font-body)", fontSize: "0.9rem", color: "#D4A017", marginBottom: "2.5rem" }}>
-            {t("cta.note")}
-          </p>
-          <div style={{ display: "flex", gap: "1rem", justifyContent: "center", flexWrap: "wrap" }}>
-            <a href="#register" className="btn-primary">{t("cta.cta_exhibitor")} →</a>
-            <a href="#register" className="btn-outline">{t("cta.cta_visitor")}</a>
+      {/* SECTION 6: FINAL CTA (open cities only) */}
+      {cityData.status === "open" && (
+        <section className="section-padding" style={{ background: "linear-gradient(135deg, #0a1628 0%, #162544 100%)" }}>
+          <div className="section-container" style={{ textAlign: "center", maxWidth: "700px" }}>
+            <h2 style={{ fontSize: "clamp(1.75rem, 5vw, 3rem)", color: "#FFFFFF", marginBottom: "0.75rem" }}>
+              {t("cta.title")}
+            </h2>
+            <p style={{ fontFamily: "var(--font-body)", fontSize: "1.1rem", color: "rgba(255,255,255,0.65)", marginBottom: "0.5rem", lineHeight: 1.7 }}>
+              {t("cta.subtitle")}
+            </p>
+            <p style={{ fontFamily: "var(--font-body)", fontSize: "0.9rem", color: "#D4A017", marginBottom: "2.5rem" }}>
+              {t("cta.note")}
+            </p>
+            <div style={{ display: "flex", gap: "1rem", justifyContent: "center", flexWrap: "wrap" }}>
+              <a href="#register" className="btn-primary">{t("cta.cta_exhibitor")} →</a>
+              <a href="#register" className="btn-outline">{t("cta.cta_visitor")}</a>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
     </>
   );
 }
 
 export function generateStaticParams() {
   return SUPPORTED_COUNTRIES.flatMap((country) =>
-    SUPPORTED_CITIES.map((city) => ({ country, city }))
+    (Object.keys(CITIES) as CitySlug[]).map((city) => ({ country, city }))
   );
 }

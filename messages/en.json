@@ -328,11 +328,11 @@
   },
   "city": {
     "hero": {
-      "badge": "Bogotá · First Edition",
-      "title": "Kids Entrepreneurs Fair — Bogotá",
+      "badge": "First Edition",
       "venue": "Shopping mall (TBC)",
       "dates": "Dates TBC",
-      "status": "Contest status: Open",
+      "status_open": "Open call: Active",
+      "status_coming": "Coming Soon",
       "cta_exhibitor": "Submit your child's business",
       "cta_visitor": "Register your family as visitors"
     },
@@ -346,7 +346,7 @@
       "hours_value": "Shopping mall hours"
     },
     "timeline": {
-      "title": "Bogotá Timeline",
+      "title": "Timeline",
       "steps": [
         { "label": "Application deadline", "value": "TBD" },
         { "label": "Instagram contest active", "value": "TBD" },
