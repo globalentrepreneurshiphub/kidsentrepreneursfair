@@ -28,11 +28,58 @@
     "hero": {
       "badge": "International Kids Entrepreneurship Fair",
       "title": "Kids Entrepreneurs Fair",
-      "tagline": "\"The first fair where kids own the business.\"",
-      "tags": "Real Entrepreneurship  ·  Technology  ·  Robots  ·  Artificial Intelligence  ·  Drones",
-      "stats": ["3 days", "Premium Shopping Malls", "Free admission for visitors"],
+      "subtitle": "First Edition",
+      "tagline": "The first fair where kids own the business.",
+      "keywords": ["Real Entrepreneurship", "Technology", "Robots", "Artificial Intelligence", "Drones", "Leadership"],
+      "stats": ["3 days", "Premium Shopping Malls", "Free admission"],
       "cta_primary": "Find the fair in your country",
       "cta_secondary": "Learn more"
+    },
+    "sectionCards": {
+      "title": "Discover the fair",
+      "subtitle": "Everything you need to know about Kids Entrepreneurs Fair",
+      "cards": {
+        "about": {
+          "title": "What is the Fair?",
+          "description": "A children's entrepreneurship fair in premium shopping malls. 3 days where kids are the protagonists.",
+          "cta": "Learn more"
+        },
+        "experiences": {
+          "title": "Two Experiences",
+          "description": "Exhibitor Entrepreneur with golden credential and booth, or Future Entrepreneur visitor with free admission.",
+          "cta": "Learn more"
+        },
+        "zones": {
+          "title": "4 Fair Zones",
+          "description": "Registration, Stage, Entrepreneur Stands, and Interactive Experience Zone with robots, AI, and drones.",
+          "cta": "Learn more"
+        },
+        "call": {
+          "title": "Open Call",
+          "description": "Does your child have a business? Apply now. Selected families participate for free.",
+          "cta": "Apply now"
+        },
+        "products": {
+          "title": "What can I sell?",
+          "description": "Crafts, technology, toys, books, art, fashion, and eco-friendly products.",
+          "cta": "See categories"
+        },
+        "howto": {
+          "title": "How does it work?",
+          "description": "Step by step for exhibitors and visitors. From registration to your certificate.",
+          "cta": "See steps"
+        },
+        "marketplace": {
+          "title": "Virtual Stand Kids",
+          "description": "The permanent digital fair where kids sell their products online.",
+          "cta": "Coming soon"
+        },
+        "clubkids": {
+          "title": "Club Kids",
+          "description": "The community where kids from all fairs connect and grow together.",
+          "cta": "Coming soon"
+        }
+      }
     },
     "about": {
       "title": "What is Kids Entrepreneurs Fair?",
@@ -120,7 +167,14 @@
         "Membership in the Kids Entrepreneurs Fair community for the whole family",
         "Public recognition and first real sales"
       ],
-      "cta": "Submit your child's business"
+      "cta": "Submit your child's business",
+      "how_title": "How does the contest work?",
+      "how_steps": [
+        "Register your child and their business in the corresponding city",
+        "Record a video (max 2 min) presenting the business and post it on Instagram in collaboration with @kidsentrepreneursfair",
+        "Share with family, friends and community — likes, comments and shares count",
+        "Videos with the best metrics per city win their spot with booth, credentials and everything included"
+      ]
     },
     "certificates": {
       "title": "Official certificates",
@@ -183,8 +237,12 @@
       ]
     },
     "sponsors": {
-      "title": "Our sponsors",
-      "subtitle": "These brands make Kids Entrepreneurs Fair possible globally."
+      "title": "Sponsors & Partners",
+      "subtitle": "We're building the first edition. If your brand wants to be part of this story, get in touch.",
+      "organizer_label": "Official organizer",
+      "organizer_name": "Global Entrepreneurship Hub UAE",
+      "organizer_desc": "Organized from the United Arab Emirates. Connecting children's entrepreneurship with the world.",
+      "cta": "Become a sponsor →"
     },
     "countries": {
       "title": "Find the fair in your country",
@@ -194,21 +252,30 @@
         "badge": "First Edition",
         "cities": "Bogotá · Cali · Medellín · Barranquilla"
       },
-      "coming_soon_title": "Coming soon in the following countries:",
-      "regions": [
-        {
-          "name": "South America",
-          "countries": ["Argentina — Buenos Aires", "Peru — Lima", "Chile — Santiago", "Ecuador — Quito", "Bolivia — Sucre", "Paraguay — Asunción", "Uruguay — Montevideo"]
-        },
-        {
-          "name": "Central America",
-          "countries": ["Guatemala — Guatemala City", "Costa Rica — San José", "Panama — Panama City", "Honduras — Tegucigalpa"]
-        },
-        {
-          "name": "North America",
-          "countries": ["Mexico — Mexico City"]
-        }
-      ]
+      "coming_soon_title": "Coming soon in more countries",
+      "coming_soon_countries": [
+        { "flag": "🇲🇽", "name": "Mexico" },
+        { "flag": "🇵🇦", "name": "Panama" },
+        { "flag": "🇨🇷", "name": "Costa Rica" },
+        { "flag": "🇩🇴", "name": "Dominican Rep." },
+        { "flag": "🇪🇨", "name": "Ecuador" },
+        { "flag": "🇵🇪", "name": "Peru" },
+        { "flag": "🇨🇱", "name": "Chile" },
+        { "flag": "🇦🇷", "name": "Argentina" },
+        { "flag": "🇧🇷", "name": "Brazil" },
+        { "flag": "🇪🇸", "name": "Spain" },
+        { "flag": "🇵🇹", "name": "Portugal" },
+        { "flag": "🇺🇸", "name": "USA" }
+      ],
+      "form_title": "Want to bring the fair to your city?",
+      "form_subtitle": "Leave your details and we'll explore the possibility together",
+      "form_name": "Your name",
+      "form_email": "Your email",
+      "form_city": "Your city",
+      "form_country": "Your country",
+      "form_submit": "I want the fair in my city",
+      "form_success": "Registered! We'll contact you to explore the possibility.",
+      "form_error": "Failed to send. Please try again."
     },
     "contact": {
       "title": "Contact",

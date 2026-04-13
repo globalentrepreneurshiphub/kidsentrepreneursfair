@@ -28,11 +28,58 @@
     "hero": {
       "badge": "Feria Internacional de Emprendimiento Infantil",
       "title": "Kids Entrepreneurs Fair",
-      "tagline": "\"La primera feria donde los niños son los dueños del negocio.\"",
-      "tags": "Emprendimiento Real  ·  Tecnología  ·  Robots  ·  Inteligencia Artificial  ·  Drones",
-      "stats": ["3 días", "Centros Comerciales Premium", "Entrada gratuita para visitantes"],
+      "subtitle": "Primera Edición",
+      "tagline": "La primera feria donde los niños son los dueños del negocio.",
+      "keywords": ["Emprendimiento Real", "Tecnología", "Robots", "Inteligencia Artificial", "Drones", "Liderazgo"],
+      "stats": ["3 días", "Centros Comerciales Premium", "Entrada libre"],
       "cta_primary": "Encuentra la feria en tu país",
       "cta_secondary": "Conocer más"
+    },
+    "sectionCards": {
+      "title": "Descubre la feria",
+      "subtitle": "Todo lo que necesitas saber sobre Kids Entrepreneurs Fair",
+      "cards": {
+        "about": {
+          "title": "¿Qué es la Feria?",
+          "description": "Una feria de emprendimiento infantil en centros comerciales premium. 3 días donde los niños son los protagonistas.",
+          "cta": "Ver más"
+        },
+        "experiences": {
+          "title": "Dos Experiencias",
+          "description": "Emprendedor Expositor con credencial dorada y su stand, o Futuro Emprendedor visitante con entrada gratuita.",
+          "cta": "Ver más"
+        },
+        "zones": {
+          "title": "4 Zonas de la Feria",
+          "description": "Registro, Escenario, Stands de Emprendedores y Zona de Experiencia Interactiva con robots, IA y drones.",
+          "cta": "Ver más"
+        },
+        "call": {
+          "title": "Convocatoria",
+          "description": "¿Tu hijo tiene un negocio? Postúlalo. Las familias seleccionadas participan gratis.",
+          "cta": "Postular ahora"
+        },
+        "products": {
+          "title": "¿Qué puedo vender?",
+          "description": "Manualidades, tecnología, juguetes, libros, arte, moda y productos ecológicos.",
+          "cta": "Ver categorías"
+        },
+        "howto": {
+          "title": "¿Cómo funciona?",
+          "description": "Paso a paso para expositores y visitantes. Desde el registro hasta tu certificado.",
+          "cta": "Ver pasos"
+        },
+        "marketplace": {
+          "title": "Stand Virtual Kids",
+          "description": "La feria digital permanente donde los niños venden sus productos en línea.",
+          "cta": "Próximamente"
+        },
+        "clubkids": {
+          "title": "Club Kids",
+          "description": "La comunidad donde los niños de todas las ferias se conectan y crecen juntos.",
+          "cta": "Próximamente"
+        }
+      }
     },
     "about": {
       "title": "¿Qué es Kids Entrepreneurs Fair?",
@@ -120,7 +167,14 @@
         "Membresía en la comunidad Kids Entrepreneurs Fair para toda la familia",
         "Reconocimiento público y primeras ventas reales"
       ],
-      "cta": "Postula el negocio de tu hijo"
+      "cta": "Postula el negocio de tu hijo",
+      "how_title": "¿Cómo funciona el concurso?",
+      "how_steps": [
+        "Registra a tu hijo y su negocio en la ciudad correspondiente",
+        "Graba un video (máx. 2 min) presentando el negocio y publícalo en Instagram en colaboración con @kidsentrepreneursfair",
+        "Comparte con familia, amigos y comunidad — los likes, comentarios y compartidos cuentan",
+        "Los videos con mejores métricas por ciudad ganan su lugar con stand, credenciales y todo incluido"
+      ]
     },
     "certificates": {
       "title": "Certificados oficiales",
@@ -183,8 +237,12 @@
       ]
     },
     "sponsors": {
-      "title": "Nuestros patrocinadores",
-      "subtitle": "Estas marcas hacen posible Kids Entrepreneurs Fair a nivel global."
+      "title": "Sponsors y Aliados",
+      "subtitle": "Estamos construyendo la primera edición. Si tu marca quiere ser parte de esta historia, escríbenos.",
+      "organizer_label": "Organizador oficial",
+      "organizer_name": "Global Entrepreneurship Hub UAE",
+      "organizer_desc": "Organizado desde Emiratos Árabes Unidos. Conectando el emprendimiento infantil con el mundo.",
+      "cta": "Ser sponsor →"
     },
     "countries": {
       "title": "Encuentra la feria en tu país",
@@ -194,21 +252,30 @@
         "badge": "Primera Edición",
         "cities": "Bogotá · Cali · Medellín · Barranquilla"
       },
-      "coming_soon_title": "Próximamente en los siguientes países:",
-      "regions": [
-        {
-          "name": "Suramérica",
-          "countries": ["Argentina — Buenos Aires", "Perú — Lima", "Chile — Santiago", "Ecuador — Quito", "Bolivia — Sucre", "Paraguay — Asunción", "Uruguay — Montevideo"]
-        },
-        {
-          "name": "Centroamérica",
-          "countries": ["Guatemala — Ciudad de Guatemala", "Costa Rica — San José", "Panamá — Ciudad de Panamá", "Honduras — Tegucigalpa"]
-        },
-        {
-          "name": "Norteamérica",
-          "countries": ["México — Ciudad de México"]
-        }
-      ]
+      "coming_soon_title": "Próximamente en más países",
+      "coming_soon_countries": [
+        { "flag": "🇲🇽", "name": "México" },
+        { "flag": "🇵🇦", "name": "Panamá" },
+        { "flag": "🇨🇷", "name": "Costa Rica" },
+        { "flag": "🇩🇴", "name": "Rep. Dominicana" },
+        { "flag": "🇪🇨", "name": "Ecuador" },
+        { "flag": "🇵🇪", "name": "Perú" },
+        { "flag": "🇨🇱", "name": "Chile" },
+        { "flag": "🇦🇷", "name": "Argentina" },
+        { "flag": "🇧🇷", "name": "Brasil" },
+        { "flag": "🇪🇸", "name": "España" },
+        { "flag": "🇵🇹", "name": "Portugal" },
+        { "flag": "🇺🇸", "name": "EE.UU." }
+      ],
+      "form_title": "¿Quieres traer la feria a tu ciudad?",
+      "form_subtitle": "Déjanos tus datos y exploraremos la posibilidad juntos",
+      "form_name": "Tu nombre",
+      "form_email": "Tu email",
+      "form_city": "Tu ciudad",
+      "form_country": "Tu país",
+      "form_submit": "Quiero la feria en mi ciudad",
+      "form_success": "¡Registrado! Te contactaremos para explorar la posibilidad.",
+      "form_error": "Error al enviar. Intenta de nuevo."
     },
     "contact": {
       "title": "Contacto",
