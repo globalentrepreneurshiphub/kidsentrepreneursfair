@@ -189,43 +189,11 @@ export default function HeroSection({
             color: "var(--color-body-text)",
             fontWeight: 500,
             maxWidth: "600px",
-            margin: "0 auto 1.5rem",
+            margin: "0 auto 2rem",
           }}
         >
           {tagline}
         </p>
-
-        {/* Keywords */}
-        <div
-          style={{
-            display: "flex",
-            flexWrap: "wrap",
-            justifyContent: "center",
-            gap: "0.7rem",
-            marginBottom: "2rem",
-          }}
-        >
-          {keywords.map((kw) => (
-            <span
-              key={kw}
-              style={{
-                background: "rgba(255,255,255,0.85)",
-                backdropFilter: "blur(8px)",
-                border: "1px solid rgba(255,255,255,0.6)",
-                padding: "0.5rem 1.2rem",
-                borderRadius: "50px",
-                fontFamily: "var(--font-body)",
-                fontWeight: 600,
-                fontSize: "0.85rem",
-                color: "var(--color-dark-text)",
-                boxShadow: "0 4px 16px rgba(0,0,0,0.06)",
-                transition: "all 0.3s ease",
-              }}
-            >
-              {kw}
-            </span>
-          ))}
-        </div>
 
         {/* CTAs */}
         <div

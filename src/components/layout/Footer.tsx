@@ -19,10 +19,10 @@ export default function Footer() {
     {
       title: locale === "es" ? "Emprendedores" : "Entrepreneurs",
       links: [
-        { label: locale === "es" ? "Qué puedo vender" : "What can I sell", href: "#products" },
-        { label: locale === "es" ? "Cómo funciona" : "How it works", href: "#howto" },
         { label: locale === "es" ? "Stand Virtual Kids" : "Virtual Stand Kids", href: "#marketplace" },
         { label: "Club Kids", href: "#clubkids" },
+        { label: locale === "es" ? "Qué puedo vender" : "What can I sell", href: "#products" },
+        { label: locale === "es" ? "Cómo funciona" : "How it works", href: "#howto" },
       ],
     },
     {
@@ -153,7 +153,7 @@ export default function Footer() {
               ))}
             </div>
             <p style={{ marginTop: "1rem", fontSize: "0.8rem" }}>
-              📧 info@kidsentrepreneursfair.com
+              📧 {t("email")}
             </p>
           </div>
         </div>
@@ -205,6 +205,10 @@ export default function Footer() {
             {" · "}
             <a href="#" style={{ color: "var(--color-gold)", textDecoration: "none" }}>
               {locale === "es" ? "Términos y Condiciones" : "Terms & Conditions"}
+            </a>
+            {" · "}
+            <a href="#" style={{ color: "var(--color-gold)", textDecoration: "none" }}>
+              {locale === "es" ? "Política de Cookies" : "Cookie Policy"}
             </a>
           </p>
         </div>
