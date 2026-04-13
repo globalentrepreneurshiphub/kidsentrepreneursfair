@@ -133,6 +133,34 @@ export default function ClubKidsSection({ locale }: ClubKidsSectionProps) {
             )}
           </div>
         </div>
+
+        <div className="ck-who">
+          <h4 className="ck-who-title">
+            {es ? "¿Quiénes pueden ser parte?" : "Who can join?"}
+          </h4>
+          <p className="ck-who-text">
+            {es ? (
+              <>
+                Los <strong>Emprendedores Expositores</strong> reciben su membresía automáticamente. Los <strong>Futuros Emprendedores</strong> visitantes pueden solicitar su ingreso al finalizar la feria.
+              </>
+            ) : (
+              <>
+                <strong>Exhibitor Entrepreneurs</strong> receive their membership automatically. <strong>Future Entrepreneur</strong> visitors can request to join at the end of the fair.
+              </>
+            )}
+          </p>
+          <p className="ck-who-text">
+            {es ? (
+              <>
+                Las <strong>familias interesadas</strong> en que sus hijos hagan parte de una comunidad de emprendimiento infantil también pueden registrarse y adquirir su membresía. Si tu hijo tiene un emprendimiento o una idea de negocio, Club Kids es el lugar perfecto para desarrollarlo con acompañamiento, talleres y una red de apoyo real.
+              </>
+            ) : (
+              <>
+                <strong>Families</strong> who want their kids to be part of a children&apos;s entrepreneurship community can also register and purchase a membership. If your child has a business or a business idea, Club Kids is the perfect place to develop it with guidance, workshops, and a real support network.
+              </>
+            )}
+          </p>
+        </div>
       </div>
 
       <style>{`
@@ -243,6 +271,36 @@ export default function ClubKidsSection({ locale }: ClubKidsSectionProps) {
           font-weight: 700;
           font-size: 1rem;
           color: var(--color-lavender);
+        }
+        .ck-who {
+          background: var(--color-lavender-soft);
+          padding: 2rem;
+          border-radius: 20px;
+          margin-top: 3rem;
+          max-width: 800px;
+          margin-left: auto;
+          margin-right: auto;
+          border: 1px solid rgba(155, 127, 212, 0.2);
+        }
+        .ck-who-title {
+          color: var(--color-lavender);
+          font-family: var(--font-heading);
+          font-size: 1.15rem;
+          font-weight: 700;
+          margin-bottom: 1rem;
+        }
+        .ck-who-text {
+          font-size: 0.95rem;
+          color: var(--color-body-text);
+          line-height: 1.7;
+          margin-bottom: 0.9rem;
+        }
+        .ck-who-text:last-child {
+          margin-bottom: 0;
+        }
+        .ck-who-text strong {
+          color: var(--color-dark-text);
+          font-weight: 700;
         }
         @media (max-width: 768px) {
           .ck-grid {
