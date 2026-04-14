@@ -343,7 +343,11 @@
       "dates_label": "Fair dates",
       "dates_value": "Friday, Saturday, Sunday (TBC)",
       "hours_label": "Hours",
-      "hours_value": "Shopping mall hours"
+      "hours_value": "Shopping mall hours",
+      "entry_label": "Admission",
+      "entry_value": "Free and open to the public",
+      "ages_label": "Ages",
+      "ages_value": "5 to 17 years with guardian"
     },
     "timeline": {
       "title": "Timeline",
@@ -393,7 +397,7 @@
     "cta": {
       "title": "Your child is already an entrepreneur.",
       "subtitle": "They just need the stage. Submit them and let the public decide.",
-      "note": "Limited spots in Bogotá. Instagram decides.",
+      "note": "Limited spots. Instagram decides.",
       "cta_exhibitor": "Submit your child's business",
       "cta_visitor": "Register your family as visitors"
     },

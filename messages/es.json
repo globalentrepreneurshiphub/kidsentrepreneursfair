@@ -343,7 +343,11 @@
       "dates_label": "Fechas de la feria",
       "dates_value": "Viernes, sábado y domingo (Por confirmar)",
       "hours_label": "Horario",
-      "hours_value": "Horario del centro comercial"
+      "hours_value": "Horario del centro comercial",
+      "entry_label": "Entrada",
+      "entry_value": "Libre y gratuita",
+      "ages_label": "Edades",
+      "ages_value": "5 a 17 años con acompañante"
     },
     "timeline": {
       "title": "Cronograma",
@@ -393,7 +397,7 @@
     "cta": {
       "title": "Tu hijo ya es emprendedor.",
       "subtitle": "Solo necesita el escenario. Postúlalo y que el público decida.",
-      "note": "Cupos limitados en Bogotá. Instagram decide.",
+      "note": "Cupos limitados. Instagram decide.",
       "cta_exhibitor": "Postula el negocio de tu hijo",
       "cta_visitor": "Registra a tu familia como visitantes"
     },
