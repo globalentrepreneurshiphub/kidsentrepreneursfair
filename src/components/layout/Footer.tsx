@@ -76,15 +76,7 @@ export default function Footer() {
         </div>
 
         {/* Columns */}
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))",
-            gap: "2rem",
-            textAlign: "left",
-            marginBottom: "2.5rem",
-          }}
-        >
+        <div className="footer-columns">
           {columns.map((col) => (
             <div key={col.title}>
               <h4
@@ -213,6 +205,34 @@ export default function Footer() {
           </p>
         </div>
       </div>
+
+      <style>{`
+        .footer-columns {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          gap: 2rem;
+          text-align: left;
+          margin-bottom: 2.5rem;
+        }
+        .footer-columns > div {
+          min-width: 0;
+        }
+        .footer-columns p {
+          overflow-wrap: anywhere;
+        }
+        @media (max-width: 960px) {
+          .footer-columns {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.75rem;
+          }
+        }
+        @media (max-width: 360px) {
+          .footer-columns {
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+          }
+        }
+      `}</style>
     </footer>
   );
 }
